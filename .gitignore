@@ -1,0 +1,6 @@
+/vendor
+/clientdata
+/tmpDir
+/output
+composer.lock
+.env
