@@ -2,8 +2,6 @@
 
 require_once('./vendor/autoload.php');
 
-global $CliArgs;
-
 
 use Nosdave\Logger;
 use Nosdave\GameFile;
@@ -11,33 +9,7 @@ use Nosdave\PostProcessing\Quest;
 
 $timeStarted = microtime(true);
 
-$config = [
-    // You should specify key as name of option from the command line argument list.
-    // Example, name <param-name> for --param-name option
-    'output-path' => [
-        'alias' => 'o',
-        'filter' => function($name, $default) {
-            return $name ? mb_convert_case($name, MB_CASE_TITLE, 'UTF-8') : $defult;
-        },
-        'default' => './content',
-    ],
-    'clear' => [
-        'alias' => 'c',
-        'filter' => function($name, $default) {
-            return !in_array($name, ["false", "no", "n"]);
-        },
-        'default' => false,
-    ],
-];
-
-$CliArgs = new CliArgs\CliArgs($config);
-if ($CliArgs->isFlagExist('help')) {
-    echo $CliArgs->getHelp();
-    die;
-}
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->safeLoad();
+Nosdave\CliEnvironment::Bootstrap();
 
 $clearOutputDir = Nosdave\Config::Get('clear');
 $outputDir = realpath(Nosdave\Config::Get('OUTPUT_DIR', "./content"));
