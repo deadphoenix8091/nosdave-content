@@ -2,7 +2,7 @@
 
 This project contains the content generation code that extracts clientdata from the current NosTale client to build data objects for use in nosdave.de
 
-## Üarsing Tool
+## Parsing Tool
 ## Environment Variables
 
 - _OUTPUT_DIR_ | Path to nuxt content directory
