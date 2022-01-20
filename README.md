@@ -13,3 +13,4 @@ This project contains the content generation code that extracts clientdata from 
 ## Extraction Tool
 ### Environment Variables
 - _NOSTALEDATA_DIR_ | Path to NostaleData client directory
+- _EXTRACTED_OUTPUT_DIR_ | Path to output directory for extracted archives

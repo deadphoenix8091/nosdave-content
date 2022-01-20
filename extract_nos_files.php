@@ -156,9 +156,10 @@ foreach($gameDataFiles as $currentDataFileName) {
                     }
                 }
 
-                if (!is_dir($nostaleDataDir . "/ext_" . $currentDataFileName))
-                    mkdir($nostaleDataDir . "/ext_" . $currentDataFileName);
-                file_put_contents($nostaleDataDir . "/ext_" . $currentDataFileName . "/" . $fileName, $fileContent);
+                $outputDir = Nosdave\Config::Get('EXTRACTED_OUTPUT_DIR');
+                if (!is_dir($outputDir . "/ext_" . $currentDataFileName))
+                    mkdir($outputDir . "/ext_" . $currentDataFileName, 0777, true);
+                file_put_contents($outputDir . "/ext_" . $currentDataFileName . "/" . $fileName, $fileContent);
             }
             break;
     }
