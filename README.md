@@ -3,7 +3,7 @@
 This project contains the content generation code that extracts clientdata from the current NosTale client to build data objects for use in nosdave.de
 
 ## Parsing Tool
-## Environment Variables
+### Environment Variables
 
 - _OUTPUT_DIR_ | Path to nuxt content directory
 - _EXTRACTED_GAME_TABLE_DATA_DIR_ | Path to extracted NSgtdData archive
