@@ -285,7 +285,7 @@ namespace Nosdave {
 
         public static function Parse($fileName, &$postProcessingCallbacks) {
             $inputName = basename($fileName);
-            $inputName = str_replace(".dat.bin", "", $inputName);
+            $inputName = str_replace(".dat", "", $inputName);
 
             if (mb_strpos($inputName, "_") !== false) {
                 if (mb_strpos($inputName, "de_") === false && mb_strpos($inputName, "act_") === false) {
@@ -322,7 +322,7 @@ namespace Nosdave {
 
             $translations = LocalizationHelper::Load($inputName);
 
-            if (mb_strpos($fileName, ".dat.bin") !== false) {
+            if (mb_strpos($fileName, ".dat") !== false) {
                 self::parseDatFile($fileName, $inputName, $translations, $postProcessingCallbacks);
             } else {
                 Logger::Info("Parser for \"". $inputName . "\" not yet implemented.");

@@ -22,4 +22,4 @@ jobs:
       - name: Deploy with rsync
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/nosdave/nosdave-content/
       - name: Run extractor and parsing tool
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ~/nosdave-content; php composer.phar install; php extract_nos_files.php"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ~/nosdave-content; php composer.phar install; php extract_nos_files.php; php parse_content.php --clear"

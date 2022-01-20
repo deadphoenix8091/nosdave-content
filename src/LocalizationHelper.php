@@ -34,7 +34,7 @@ namespace Nosdave {
 
         public static function Load($inputName) {
             $langDataPath = Config::Get('EXTRACTED_LANGUAGE_DIR', './clientfiles/NSlangData_DE');
-            $inputFileName = $langDataPath . '/_code_de_' . $inputName . '.txt.bin';
+            $inputFileName = $langDataPath . '/_code_de_' . $inputName . '.txt';
             Logger::Verbose("Attempting to load translation dictionary from \"" . $inputFileName . "\".");
 
             if (!file_exists($inputFileName)) {
