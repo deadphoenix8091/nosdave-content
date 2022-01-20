@@ -62,6 +62,8 @@ foreach($gameDataFiles as $currentDataFileName) {
     fseek($fhandle, 0);
     $magic = fread($fhandle, 4);
 
+    if (!in_array($currentDataFileName, ['NSgtdData.NOS', 'NSlangData_DE.NOS'])) continue;
+
     //if (header.mid(0, 7) == "NT Data" || header.mid(0, 10) == "32GBS V1.0" || header.mid(0, 10) == "ITEMS V1.0")
     //return &zlibOpener;
     //else if (header.mid(0, 11) == "CCINF V1.20")
